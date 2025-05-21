@@ -1,0 +1,192 @@
+/* Background & Body Setup */
+body {
+  background: linear-gradient(120deg, #0f0f0f, #1b1b1b);
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated Background Glow */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, #00ffcc33, transparent 40%),
+              radial-gradient(circle at 70% 70%, #00ccff33, transparent 40%),
+              radial-gradient(circle at 50% 50%, #0099ff22, transparent 50%);
+  animation: animateBackground 15s linear infinite;
+  z-index: 0;
+  filter: blur(100px);
+}
+
+@keyframes animateBackground {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Scanner Box */
+.scanner-box {
+  background: rgba(27, 27, 27, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 15px #00ffcc33;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+.scanner-output {
+  background-color: #000;
+  color: #0f0;
+  font-family: monospace;
+  font-size: 14px;
+  height: 200px;
+  overflow-y: auto;
+  border: 2px solid #0f0;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+  border-radius: 8px;
+}
+
+/* Regenerate Button */
+button {
+  background-color: #00cc88;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #00a374;
+}
+
+/* Wallet Result Card */
+.hidden {
+  display: none;
+}
+
+.wallet-card {
+  display: flex;
+  align-items: center;
+  background: #111;
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+  margin-top: 30px;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 0 10px #00ffcc55;
+}
+
+.wallet-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: white;
+  padding: 4px;
+}
+
+#wallet-name {
+  font-size: 1.4em;
+  margin: 0;
+  color: #00ffcc;
+}
+
+#wallet-balance {
+  font-size: 1.2em;
+  margin: 4px 0 0;
+}
+
+/* Wallet Brand Logos */
+.wallet-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #333;
+  z-index: 1;
+  position: relative;
+}
+
+.wallet-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.wallet-logo-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 0 12px #00ffcc55;
+  transition: transform 0.3s ease;
+}
+
+.wallet-logo-item img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 18px #00ffccaa;
+}
+
+.result-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  text-align: center;
+  box-shadow: 0 0 10px #00ffcc33;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.seed-phrase {
+  margin-top: 20px;
+  font-family: monospace;
+  font-size: 15px;
+  color: #0f0;
+  background: #000;
+  padding: 12px;
+  border: 2px dashed #0f0;
+  border-radius: 8px;
+  word-wrap: break-word;
+  line-height: 1.6;
+}

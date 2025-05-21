@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallet Scanner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scanner-box">
+    <h1>SEARCHING WALLETS</h1>
+    <div class="scanner-output" id="scanner-output"></div>
+
+    <button id="regenerate" onclick="startScan()">Regenerate</button>
+
+   <div id="result" class="hidden">
+  <div class="result-box">
+    <h2>WALLET FOUND</h2>
+
+    <div id="wallet-display" class="wallet-card">
+      <img id="wallet-icon" src="" alt="Wallet Icon" />
+      <div>
+        <h3 id="wallet-name"></h3>
+        <p id="wallet-balance"></p>
+      </div>
+    </div>
+
+    <p id="seed-phrase" class="seed-phrase"></p>
+  </div>
+</div>
+
+   <!-- Wallet logos with names -->
+  <div class="wallet-logos">
+    <div class="wallet-logo-item">
+      <img src="images/trust.png" alt="Trust Wallet" />
+      <span>Trust Wallet</span>
+    </div>
+    <div class="wallet-logo-item">
+      <img src="images/phantom.png" alt="Phantom Wallet" />
+      <span>Phantom Wallet</span>
+    </div>
+    <div class="wallet-logo-item">
+      <img src="images/exodus.png" alt="Exodus Wallet" />
+      <span>Exodus Wallet</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
